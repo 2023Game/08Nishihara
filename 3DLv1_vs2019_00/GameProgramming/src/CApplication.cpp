@@ -1,6 +1,8 @@
 #include "CApplication.h"
 #include "CRectangle.h"
 #include "CVector.h"
+#include "CTexture.h"
+#include "CTriangle.h"
 //OpenGL
 #include"glut.h"
 
@@ -77,10 +79,24 @@ void CApplication::Update()
 	glVertex3f(v0.X(), v0.Y(), v0.Z());
 	glVertex3f(v1.X(), v1.Y(), v1.Z());
 	glVertex3f(v2.X(), v2.Y(), v2.Z());
-	
 
 	//描画終了
 	glEnd();
 
 
+	//三角形のクラスのインスタンスを作成
+	CTriangle t0;
+	CTriangle t1;
+	CTriangle t2;
+	//法線と頂点の設定
+	t0.Vertex(CVector(1.0f, 0.0f, 0.5f), CVector(2.0f, 0.0f, 0.0f), CVector(1.0f, 0.0f, -0.5f));
+	t0.Normal(CVector(0.0f, 1.0f, 0.0f));
+	//三角形の描画
+	t0.Render();
+	//法線と頂点の１設定
+	t1.Vertex(CVector(0.0f, 2.0f, 0.0f), CVector(-0.5f, 1.0f, 0.0f), CVector(0.5f, 1.0f, 0.0f));
+	t1.Normal(CVector(0.0f, 0.0f, 1.0f));
+	t2.Vertex(CVector(0.0f, 0.5f, 1.0f), CVector(0.0f, 0.0f, 2.0f), CVector(0.0f, -0.5f, 1.0f));
+	t1.Render();
+	t2.Render();
 }

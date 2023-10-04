@@ -21,3 +21,14 @@ float CVector::Z() const
 {
 	return mZ;
 }
+CVector::CVector()
+//‰Šú‰»ˆ—‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢
+	: mX(0.0f), mY(0.0f), mZ(0.0f)
+{
+
+}
+CVector::CVector(float x, float y, float z)
+	: mX(x), mY(y), mZ(z)
+{
+
+}

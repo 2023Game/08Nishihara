@@ -1,7 +1,7 @@
 #pragma once
 #ifndef CTRIANGLE_H
 #define CTRIANGLE_H
-
+#include <vector>
 #include "CVector.h"
 /*
 三角形クラス
@@ -17,6 +17,8 @@ public:
 	//描画
 	void Render();
 private:
+	//三角形の可変長配列
+	std::vector<CTriangle>mTriangles;
 	CVector mV[3];//頂点座標
 	CVector mN;//法線
 };

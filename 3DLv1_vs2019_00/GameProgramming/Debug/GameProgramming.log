@@ -1,0 +1,6 @@
+﻿  CModel.cpp
+C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(77,61): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(77,47): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(77,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\GameProgramming\src\CModel.cpp(103,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  GameProgramming.vcxproj -> C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\Debug\GameProgramming.exe

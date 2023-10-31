@@ -16,10 +16,14 @@ public:
 	void Normal(const CVector &n);
 	//描画
 	void Render();
+	//Norma(法線ベクトル１，法線ベクトル２，法線ベクトル3)
+	void Normal(const CVector& v0, const CVector& v1, const CVector& v2);
 private:
 	//三角形の可変長配列
 	std::vector<CTriangle>mTriangles;
 	CVector mV[3];//頂点座標
-	CVector mN;//法線
+	//CVector mN;//法線
+	CVector mN[3];
+
 };
 #endif

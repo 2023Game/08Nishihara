@@ -8,6 +8,11 @@
 */
 class CTriangle {
 public:
+	//マテリアル番号の取得
+	int MaterialIdx();
+	//マテリアル番号の設定
+	//Material(マテリアル番号)
+	void MaterialIdx(int idx);
 	//頂点座標設定
 	//Vertex(頂点１、頂点２、頂点３)
 	void Vertex(const CVector& v0, const CVector& v1, const CVector& v2);
@@ -19,6 +24,7 @@ public:
 	//Norma(法線ベクトル１，法線ベクトル２，法線ベクトル3)
 	void Normal(const CVector& v0, const CVector& v1, const CVector& v2);
 private:
+	int mMaterialIdx; //マテリアル番号
 	//三角形の可変長配列
 	std::vector<CTriangle>mTriangles;
 	CVector mV[3];//頂点座標

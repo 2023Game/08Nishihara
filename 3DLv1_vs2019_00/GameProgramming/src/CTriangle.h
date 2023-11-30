@@ -8,6 +8,8 @@
 */
 class CTriangle {
 public:
+	//UV設定
+	void UV(const CVector& v0, const CVector& v1, const CVector& v2);
 	//マテリアル番号の取得
 	int MaterialIdx();
 	//マテリアル番号の設定
@@ -24,6 +26,7 @@ public:
 	//Norma(法線ベクトル１，法線ベクトル２，法線ベクトル3)
 	void Normal(const CVector& v0, const CVector& v1, const CVector& v2);
 private:
+	CVector mUv[3]; //テクスチャマッピング
 	int mMaterialIdx; //マテリアル番号
 	//三角形の可変長配列
 	std::vector<CTriangle>mTriangles;

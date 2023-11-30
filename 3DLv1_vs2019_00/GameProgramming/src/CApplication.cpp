@@ -3,6 +3,7 @@
 #include "CVector.h"
 #include "CTexture.h"
 #include "CTriangle.h"
+#include "CMatrix.h"
 //OpenGL
 #include"glut.h"
 
@@ -30,6 +31,8 @@ CTexture* CApplication::Texture()
 //}
 void CApplication::Start()
 {
+	CMatrix matrix;
+	matrix.Print();
 	mBackGround.Load(MODEL_BACKGROUND);
  mEye = CVector(1.0f, 2.0f, 3.0f);
  mModel.Load(MODEL_OBJ); //モデルファイルの入力

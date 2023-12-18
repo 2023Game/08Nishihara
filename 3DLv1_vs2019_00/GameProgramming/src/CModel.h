@@ -43,7 +43,7 @@
 モデルクラス
 モデルデータの入力や表示
 */
-class CModel 
+class CModel
 {
 public:
 	~CModel();
@@ -52,6 +52,7 @@ public:
 	void Load(char* obj, char* mtl);
 	//描画
 	void Render();
+	void Render(const CMatrix& m);
 private:
 	//マテリアルポインタの可変長列
 	std::vector<CMaterial*> mpMaterials;

@@ -31,7 +31,36 @@ CMatrix CMatrix::Identity()
 		}
 	}
 	//•K—v‚È—v‘f‚É1.0f‚ğ‘ã“ü‚µ‚Ü‚·B
+	mM[0][0] = 1.0f; mM[0][1] = 0.0f; mM[0][2] = 0.0f; mM[0][3] = 0.0f;
+	mM[1][0] = 1.0f; mM[1][1] = 0.0f; mM[1][2] = 0.0f; mM[1][3] = 0.0f;
+	mM[2][0] = 1.0f; mM[2][1] = 0.0f; mM[2][2] = 0.0f; mM[2][3] = 0.0f;
+	mM[3][0] = 1.0f; mM[3][1] = 0.0f; mM[3][2] = 0.0f; mM[3][3] = 0.0f;
+
 
 	//‚±‚Ìs—ñ•Ô‚·
+	return *this;
+}
+
+
+float CMatrix::M(int r, int c) const
+{
+	return mM[r][c];
+}
+
+//Šg‘åk¬s—ñ‚Ìì¬
+//Scale(”{—¦X,”{—¦YA”{—¦Z)
+CMatrix CMatrix::Scale(float sx,float sy,float sz)
+{
+	//’PˆÊs—ñ‚É‚·‚é
+	Identity();
+	//”{—¦İ’è
+	mM[0][0] = sx; mM[0][1] = 0.0f; mM[0][2] = 0.0f; mM[0][3] = 0.0f;
+	mM[1][0] = 0.0f; mM[1][1] = sy; mM[1][2] = 0.0f; mM[1][3] = 0.0f;
+	mM[2][0] = mM[2][1] = 0.0f; mM[2][2] = sz; mM[2][3] = 0.0f;
+	mM[3][0] = mM[3][1] = 0.0f; mM[3][2] = 0.0f; mM[3][3] = 1.0f;
+
+
+
+	//‚±‚Ìs—ñ‚ğ•Ô‚·
 	return *this;
 }

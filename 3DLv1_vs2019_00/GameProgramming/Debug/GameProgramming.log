@@ -1,2 +1,3 @@
 ﻿  CMatrix.cpp
+C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\GameProgramming\src\CMatrix.cpp(14,12): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
   GameProgramming.vcxproj -> C:\Users\gc230\OneDrive\デスクトップ\Git\08Nishihara\3DLv1_vs2019_00\Debug\GameProgramming.exe

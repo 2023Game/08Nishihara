@@ -9,6 +9,10 @@
 class CMatrix
 {
 public:
+	//回転行列（X軸）の作成
+//RotateX(角度)
+	CMatrix RotateX(float degree);
+	CMatrix RotateZ(float degree);
 	//回転行列（Y軸）の作成
 	//RotateY(角度)
 	CMatrix RotateY(float degree);

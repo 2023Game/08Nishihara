@@ -15,10 +15,13 @@
 #include "CSound.h"
 #include "CVector.h"
 #include "CModel.h"
+#include "CCharacter3.h"
 
 class CApplication
 {
 private:
+	CCharacter3 mPlayer;
+	CCharacter3 mCharacter;
 	CModel mBackGround; //背景モデル
 	CModel mModel; //モデルクラスのインスタンス作成
 	CVector mEye;

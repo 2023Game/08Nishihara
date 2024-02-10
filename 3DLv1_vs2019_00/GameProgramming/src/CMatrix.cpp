@@ -30,9 +30,9 @@ CMatrix CMatrix::RotateZ(float degree)
 	//単位行列にする
 	Identity();
 	//Z軸で回転する行列の設定
-	mM[0][1] =mM[1][1] = cosf(rad);
-	mM[2][1] = sinf(rad);
-	mM[2][2] = -mM[1][2];
+	mM[0][0] =mM[1][1] = cosf(rad);
+	mM[0][1] = sinf(rad);
+	mM[1][0] = -mM[0][1];
 	//行列を返す
 	return *this;
 }

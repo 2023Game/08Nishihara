@@ -32,6 +32,7 @@ CTexture* CApplication::Texture()
 //}
 void CApplication::Start()
 {
+
 	mPlayer.Model(&mModel);
 	mPlayer.Scale(CVector(0.1f, 0.1f, 0.1f));
 	mPlayer.Position(CVector(0.0f, 0.0f, -3.0f));

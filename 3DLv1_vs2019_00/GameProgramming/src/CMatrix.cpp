@@ -141,6 +141,11 @@ void CMatrix::M(int row, int col, float value)
 	mM[row][col] = value;
 }
 
+float* CMatrix::M() const
+{
+	return (float*)mM[0];
+}
+
 //*演算子のオーバーロード
 //CMatrix * CMatrix の演算結果を返す
 const CMatrix CMatrix::operator*(const CMatrix& m) const

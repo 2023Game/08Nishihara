@@ -6,6 +6,7 @@
 #define GRAVITY (TIPSIZE / 20.0f)	//重力加速度
 #define JUMPV0 (TIPSIZE / 1.4f)		//ジャンプの初速
 #define ROTATION_YV CVector(0.0f, 1.0f, 0.0f) //回転速度
+#define ROTATION_XV CVector(1.0f,0.0f,0.0f)//回転速度
 #define VELOCITY CVector(0.0f, 0.0f, 0.1f) //移動速度
 
 //CPlayer(位置, 回転, スケール)
@@ -29,11 +30,22 @@ void CPlayer::Update()
 		//Y軸の回転値を減少
 		mRotation = mRotation - ROTATION_YV;
 	}
+	
 	//上キー入力で前進
 	if (mInput.Key(VK_UP)) 
 	{
 		//Z軸方向の値を回転させ移動させる
 		mPosition = mPosition + VELOCITY * mMatrixRotate;
+	}
+	if (mInput.Key('S'))
+	{
+		//X軸の回転値を減算
+		mRotation = mRotation - ROTATION_XV;
+	}
+	if (mInput.Key('W'))
+	{
+		//X軸の回転値を加算
+		mRotation = mRotation + ROTATION_XV;
 	}
 
 	//変換行列の更新

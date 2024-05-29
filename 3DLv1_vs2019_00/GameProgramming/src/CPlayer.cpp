@@ -19,6 +19,15 @@ CPlayer::CPlayer(const CVector& pos, const CVector& rot
 //更新処理
 void CPlayer::Update() 
 {
+	//スペースキー入力で弾発射
+	if (mInput.Key(VK_SPACE)) 
+	{
+		bullet.Set(0.1f, 1.5f);
+		bullet.Position(CVector(0.0f, 0.0f, 10.0f) * mMatrix);
+		bullet.Rotation(mRotation);
+	}
+
+
 	if (mInput.Key('A'))
 	{
 		//Y軸の回転値を増加

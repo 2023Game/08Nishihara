@@ -120,6 +120,8 @@ void CApplication::Update()
 	trans.Scale(CVector(0.1f, 0.1f, 0.1f)); //Šg‘åk¬‚Ìİ’è
 	trans.Update(); //s—ñ‚ÌXV
 	//mModel.Render(trans.Matrix());
+	mPlayer.bullet.Update();
+	mPlayer.bullet.Render();
 
 
 

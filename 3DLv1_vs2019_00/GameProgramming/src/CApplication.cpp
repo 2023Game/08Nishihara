@@ -88,7 +88,7 @@ void CApplication::Update()
 	//視点の設定
 	//gluLookAt(視点X、視点Y、視点Z、中心X、中心Y、中心Z、上向X、上向Y、上向Z）
 	//gluLookAt(mEye.X(),mEye.Y(),mEye.Z(), 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-	mCharacter.Update();
+	//mCharacter.Update();
 	//カメラのパラメータを作成する
 	CVector e, c, u;//視点、注視点、上方向
 	//視点を求める
@@ -120,9 +120,20 @@ void CApplication::Update()
 	trans.Scale(CVector(0.1f, 0.1f, 0.1f)); //拡大縮小の設定
 	trans.Update(); //行列の更新
 	//mModel.Render(trans.Matrix());
-	mPlayer.bullet.Update();
-	mPlayer.bullet.Render();
+	//mPlayer.bullet.Update();
+	//mPlayer.bullet.Render();
+		//タスクマネージャの更新
+	mTaskManager.Update();
+	//タスクマネージャの描画
+	mTaskManager.Render();
 
 
 
+
+}
+
+CTaskManager CApplication::mTaskManager;
+CTaskManager* CApplication::TaskManager()
+{
+	return &mTaskManager;
 }

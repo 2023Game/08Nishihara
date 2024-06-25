@@ -6,7 +6,6 @@
 //モデルクラスのインクルード
 #include "CModel.h"
 #include "CTask.h"
-#include "CApplication.h"
 /*
 キャラクタークラス
 ゲームキャラクタの基本的な機能を定義する
@@ -26,10 +25,6 @@ protected:
 };
 
 #endif
-CCharacter3::~CCharacter3() 
-{
-	//タスクリストから削除
-	CApplication::TaskManager()->Remove(this);
-}
+
 
 

@@ -124,7 +124,7 @@ void CApplication::Update()
 	//mPlayer.bullet.Update();
 	//mPlayer.bullet.Render();
 		//タスクマネージャの更新
-	mTaskManager.Update();
+	mTaskManager.Delete();
 	//タスクマネージャの描画
 	mTaskManager.Render();
 

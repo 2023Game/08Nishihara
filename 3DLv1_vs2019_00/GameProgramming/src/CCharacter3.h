@@ -13,6 +13,7 @@
 class CCharacter3 : public CTransform,public CTask 
 {
 public:
+	CCharacter3();
 	//デストラクタ
 	~CCharacter3();
 	//モデルの設定

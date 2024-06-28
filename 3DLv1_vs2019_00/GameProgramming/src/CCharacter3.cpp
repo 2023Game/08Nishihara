@@ -11,7 +11,12 @@ void CCharacter3::Render()
 {
 	mpModel->Render(mMatrix);
 }
-CCharacter3::~CCharacter3() 
+CCharacter3::CCharacter3()
+	:mpModel(nullptr)
+{
+	CApplication::TaskManager()->Add(this);
+}
+CCharacter3::~CCharacter3()
 {
 	//タスクリストから削除
 	CApplication::TaskManager()->Remove(this);

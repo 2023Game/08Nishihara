@@ -24,7 +24,7 @@ private:
 	CModel mModelC5; //C5モデル
 	static CTaskManager mTaskManager;
 	CPlayer mPlayer;
-	CCharacter3 mCharacter;
+	//CCharacter3 mCharacter;
 	CModel mBackGround; //背景モデル
 	CModel mModel; //モデルクラスのインスタンス作成
 	CVector mEye;

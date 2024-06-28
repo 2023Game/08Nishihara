@@ -27,7 +27,7 @@ void CPlayer::Update()
 		bullet->Position(CVector(0.0f, 0.0f, 10.0f) * mMatrix);
 		bullet->Rotation(mRotation);
 		bullet->Update();
-		CApplication::TaskManager()->Add(bullet);
+	
 
 
 		//bullet.Set(0.1f, 1.5f);

@@ -17,7 +17,7 @@ CCharacterManager CApplication::mCharacterManager;
 #define SOUND_OVER "res\\mdai.wav" //ゲームオーバー音声ファイル
 #define MODEL_OBJ "res\\f14.obj","res\\f14.mtl" //モデルデータの指定"res\\obj.obj","res\\obj.mtl"
 //敵輸送機モデル
-#define MODEL_C5 "res￥￥c5.obj", "res￥￥c5.mtl"
+#define MODEL_C5 "res\\c5.obj", "res\\c5.mtl"
 
 
 CCharacterManager* CApplication::CharacterManager()
@@ -41,8 +41,8 @@ void CApplication::Start()
 	mPlayer.Position(CVector(0.0f, 0.0f, -3.0f));
 	mPlayer.Rotation(CVector(0.0f, 180.0f, 0.0f));
 
-	mCharacter.Model(&mModel);
-	mCharacter.Scale(CVector(0.1f, 0.1f, 0.1f));
+	//mCharacter.Model(&mModel);
+	//mCharacter.Scale(CVector(0.1f, 0.1f, 0.1f));
 	CMatrix matrix;
 	matrix.Print();
 	mBackGround.Load(MODEL_BACKGROUND);
@@ -54,6 +54,7 @@ void CApplication::Start()
  new CEnemy(&mModelC5, CVector(0.0f, 10.0f, -100.0f),
 	 CVector(), CVector(0.1f, 0.1f, 0.1f));
 
+ new CEnemy(&mModelC5, CVector(30, 10, -130), CVector(), CVector(0.1f, 0.1f, 0.1f));
 
 }
 
@@ -109,11 +110,10 @@ void CApplication::Update()
 	//上方向を求める
 	u = CVector(0.0f, 1.0f, 0.0f) *mPlayer.MatrixRotate();
 		//カメラの設定
-		gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
+	gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
 
 	//mCharacter.Render();
-	mPlayer.Update();
-	mPlayer.Render();
+
 	//mModel.Render(CMatrix().RotateZ(90.0f));
 	//mModel.Render(CMatrix().RotateX(90.0f));
 	mBackGround.Render();

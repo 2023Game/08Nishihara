@@ -16,6 +16,9 @@ CCharacterManager CApplication::mCharacterManager;
 #define SOUND_BGM "res\\mario.wav" //BGM音声ファイル
 #define SOUND_OVER "res\\mdai.wav" //ゲームオーバー音声ファイル
 #define MODEL_OBJ "res\\f14.obj","res\\f14.mtl" //モデルデータの指定"res\\obj.obj","res\\obj.mtl"
+//敵輸送機モデル
+#define MODEL_C5 "res￥￥c5.obj", "res￥￥c5.mtl"
+
 
 CCharacterManager* CApplication::CharacterManager()
 {
@@ -45,6 +48,13 @@ void CApplication::Start()
 	mBackGround.Load(MODEL_BACKGROUND);
  mEye = CVector(1.0f, 2.0f, 3.0f);
  mModel.Load(MODEL_OBJ); //モデルファイルの入力
+	//C5モデルの読み込み
+ mModelC5.Load(MODEL_C5);
+ //敵機のインスタンス作成
+ new CEnemy(&mModelC5, CVector(0.0f, 10.0f, -100.0f),
+	 CVector(), CVector(0.1f, 0.1f, 0.1f));
+
+
 }
 
 void CApplication::Update()

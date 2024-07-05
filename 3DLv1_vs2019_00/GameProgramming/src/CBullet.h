@@ -6,6 +6,7 @@
 #include "CCharacter3.h"
 //三角形クラスのインクルード
 #include "CTriangle.h"
+#include"CCollider.h"
 
 /*
 弾クラス
@@ -14,6 +15,7 @@
 class CBullet : public CCharacter3 
 {
 public:
+
 	CBullet();
 	//幅と奥行きの設定
 	//Set(幅, 奥行)
@@ -23,6 +25,7 @@ public:
 	//描画
 	void Render();
 private:
+	CCollider mCollider;
 	//三角形
 	CTriangle mT;
 	//生存時間

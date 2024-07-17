@@ -1,4 +1,5 @@
 #include "CTransform.h"
+#include "CTaskManager.h"
 
 const CVector& CTransform::Position() const
 {
@@ -51,4 +52,18 @@ void CTransform::Update() {
 	mMatrixTranslate.Translate(mPosition.X(), mPosition.Y(), mPosition.Z());
 	//合成行列の設定
 	mMatrix = mMatrixScale * mMatrixRotate * mMatrixTranslate;
+}
+
+//タスクマネージャのインスタンス
+CTaskManager* CTaskManager::mpInstance = nullptr;
+
+//インスタンスの取得
+CTaskManager* CTaskManager::Instance()
+{
+	//インスタンスが無ければ
+	if (mpInstance == nullptr)
+	{	//インスタンスを生成する
+		mpInstance = new CTaskManager();
+	}
+	return mpInstance;
 }

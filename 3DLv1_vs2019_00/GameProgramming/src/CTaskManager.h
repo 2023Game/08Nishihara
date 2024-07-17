@@ -30,7 +30,7 @@ public:
 	CTaskManager();
 protected:
 	//デフォルトコンストラクタ
-	CTaskManager();
+	//CTaskManager();
 	CTask mHead;//先頭タスク
 	CTask mTail;//最終タスク
 

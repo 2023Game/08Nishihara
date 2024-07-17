@@ -53,7 +53,7 @@ private:
 public:
 	
 	//static CTaskManager* TaskManager();
-	//static CCharacterManager* CharacterManager();
+	static CCharacterManager* CharacterManager();
 	static CTexture* Texture();
 	//最初に一度だけ実行するプログラム
 	void Start();

@@ -22,10 +22,10 @@ CCharacterManager CApplication::mCharacterManager;
 #define MODEL_C5 "res\\c5.obj", "res\\c5.mtl"
 
 
-//CCharacterManager* CApplication::CharacterManager()
-//{
-//	return &mCharacterManager;
-//}
+CCharacterManager* CApplication::CharacterManager()
+{
+	return &mCharacterManager;
+}
 
 CTexture* CApplication::Texture()
 {

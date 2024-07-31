@@ -1,5 +1,6 @@
 #include "CVector.h"
 #include "main.h"
+#include <math.h>
 
 //Set(X座標、Y座標、Z座標）
 void CVector::Set(float x, float y, float z)

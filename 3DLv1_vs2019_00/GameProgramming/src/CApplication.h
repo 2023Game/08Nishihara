@@ -21,6 +21,7 @@
 class CApplication
 {
 private:
+
 	CModel mModelC5; //C5モデル
 	//static CTaskManager mTaskManager;
 	CPlayer mPlayer;
@@ -32,6 +33,8 @@ private:
 	CSound mSoundOver;	//ゲームオーバー
 	CGame* mpGame;
 	static CCharacterManager mCharacterManager;
+	//モデルビューの逆行列
+	static CMatrix mModelViewInverse;
 	enum class EState
 	{
 		ESTART,	//ゲーム開始
@@ -51,7 +54,8 @@ private:
 	//CCharacterのポインタの可変長配列
 //	std::vector<CCharacter*> mCharacters;
 public:
-	
+	//モデルビュー行列の取得
+	static const CMatrix& ModelViewInverse();
 	//static CTaskManager* TaskManager();
 	static CCharacterManager* CharacterManager();
 	static CTexture* Texture();

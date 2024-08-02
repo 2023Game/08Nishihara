@@ -9,6 +9,7 @@
 #include"glut.h"
 #include "CTaskManager.h"
 #include "CCollisionManager.h"
+#include "CBillBoard.h"
 
 //クラスのstatic変数
 CTexture CApplication::mTexture;
@@ -57,6 +58,9 @@ void CApplication::Start()
 	 CVector(), CVector(0.1f, 0.1f, 0.1f));
 
  new CEnemy(&mModelC5, CVector(30, 10, -130), CVector(), CVector(0.1f, 0.1f, 0.1f));
+ //ビルボードの生成
+ new CBillBoard(CVector(-6.0f, 3.0f, -10.0f), 1.0f, 1.0f);
+
 
 }
 
@@ -116,6 +120,13 @@ void CApplication::Update()
 	u = CVector(0.0f, 1.0f, 0.0f) *mPlayer.MatrixRotate();
 		//カメラの設定
 	gluLookAt(e.X(), e.Y(), e.Z(), c.X(), c.Y(), c.Z(), u.X(), u.Y(), u.Z());
+	//モデルビュー行列の取得
+	glGetFloatv(GL_MODELVIEW_MATRIX, mModelViewInverse.M());
+	//逆行列の取得
+	mModelViewInverse = mModelViewInverse.Transpose();
+	mModelViewInverse.M(0, 3, 0);
+	mModelViewInverse.M(1, 3, 0);
+	mModelViewInverse.M(2, 3, 0);
 
 	//mCharacter.Render();
 
@@ -148,6 +159,14 @@ void CApplication::Update()
 
 
 }
+
+CMatrix CApplication::mModelViewInverse;
+
+const CMatrix& CApplication::ModelViewInverse()
+{
+	return mModelViewInverse;
+}
+
 
 //CTaskManager CApplication::mTaskManager;
 //CTaskManager* CApplication::TaskManager()

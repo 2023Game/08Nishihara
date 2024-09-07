@@ -161,7 +161,7 @@ CMatrix CMatrix::Transpose() const
 	t.mM[3][2] = mM[2][3];
 	t.mM[3][3] = mM[3][3];
 
-	return CMatrix();
+	return t;
 }
 
 float* CMatrix::M() const

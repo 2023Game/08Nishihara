@@ -36,6 +36,11 @@ void CEffect::Update()
 		CVector(right, top, 0.0f));
 	//ビルボード更新
 	CBillBoard::Update();
+	if (mFrame >= mRows * mCols * mFps)
+	{
+		mEnabled = false;
+	}
+
 }
 
 void CEffect::Render()

@@ -17,11 +17,14 @@
 #include "CModel.h"
 #include "CCharacter3.h"
 #include "CTaskManager.h"
+#include "CColliderTriangle.h"
 
 class CApplication
 {
 private:
-
+	CColliderTriangle mColliderTriangle2;
+	//三角コライダの作成
+	CColliderTriangle mColliderTriangle;
 	CModel mModelC5; //C5モデル
 	//static CTaskManager mTaskManager;
 	CPlayer mPlayer;

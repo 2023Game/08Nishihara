@@ -5,6 +5,7 @@
 #include "CCharacter3.h"
 #include "CInput.h"
 #include "CBullet.h"
+#include "CColliderLine.h"
 
 /*
 プレイヤークラス
@@ -23,9 +24,14 @@ public:
 	void Update();
 private:
 	CInput mInput;
+	CColliderLine mLine; //線分コライダ
+	CColliderLine mLine2;
+	CColliderLine mLine3;
+
 };
 
 #endif
+
 
 //private:
 	//float mVy;	//Y軸速度

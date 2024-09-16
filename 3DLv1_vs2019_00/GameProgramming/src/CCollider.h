@@ -15,9 +15,12 @@ class CCollider : public CTransform,public CTask
 	friend CCollisionManager;
 public:
 	//コライダタイプ
-	enum class EType {
+	enum class EType 
+	{
 		ESPHERE,//球コライダ
 		ETRIANGLE,//三角コライダ
+		ELINE, //線分コライダ
+
 	};
 	//デフォルトコンストラクタ
 	CCollider();

@@ -1,5 +1,6 @@
 #include "CPlayer.h"
 #include "CApplication.h"
+
 //#include "CGame.h"
 
 #define TEXCOORD 168, 188, 158, 128	//テクスチャマッピング
@@ -12,6 +13,10 @@
 //CPlayer(位置, 回転, スケール)
 CPlayer::CPlayer(const CVector& pos, const CVector& rot
 	, const CVector& scale)
+	: mLine(this, &mMatrix, CVector(0.0f, 0.0f, -14.0f), CVector(0.0f, 0.0f, 17.0f))
+	, mLine2(this, &mMatrix, CVector(0.0f, 5.0f, -8.0f), CVector(0.0f, -3.0f, -8.0f))
+	, mLine3(this, &mMatrix, CVector(9.0f, 0.0f, -8.0f), CVector(9.0f, 0.0f, -8.0f))
+
 {
 	CTransform::Update(pos, rot, scale); //行列の更新
 }
@@ -68,6 +73,7 @@ void CPlayer::Update()
 	//変換行列の更新
 	CTransform::Update();
 }
+
 
  
 

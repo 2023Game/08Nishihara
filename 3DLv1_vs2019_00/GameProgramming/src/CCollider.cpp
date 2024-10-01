@@ -74,6 +74,10 @@ CCollider::CCollider()
 	//コリジョンマネージャに追加
 	CCollisionManager::Instance()->Add(this);
 }
+CCollider::EType CCollider::Type()
+{
+	return mType;
+}
 
 bool CCollider::CollisionTriangleLine(CCollider* t, CCollider* l, CVector* a) {
 	CVector v[3], sv, ev;
@@ -111,6 +115,8 @@ bool CCollider::CollisionTriangleLine(CCollider* t, CCollider* l, CVector* a) {
 	}
 	return true;
 }
+
+
 
 
 

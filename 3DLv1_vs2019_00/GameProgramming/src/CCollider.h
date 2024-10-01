@@ -42,7 +42,9 @@ public:
 	//コリジョンマネージャに追加
 	//描画
 	void Render();
+	EType Type();
 protected:
+
 	EType mType;//コライダタイプ
 //頂点
 	CVector mV[3];

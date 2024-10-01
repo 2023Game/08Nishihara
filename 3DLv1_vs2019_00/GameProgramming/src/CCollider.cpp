@@ -79,7 +79,9 @@ CCollider::EType CCollider::Type()
 	return mType;
 }
 
-bool CCollider::CollisionTriangleLine(CCollider* t, CCollider* l, CVector* a) {
+bool CCollider::CollisionTriangleLine(CCollider* t, CCollider* l, CVector* a) 
+{
+
 	CVector v[3], sv, ev;
 	//各コライダの頂点をワールド座標へ変換
 	v[0] = t->mV[0] * *t->mpMatrix;

@@ -47,6 +47,7 @@
 class CModel
 {
 public:
+	const std::vector<CTriangle>& Triangles() const;
 	~CModel();
 	//モデルファイルの入力
 	//Load(モデルファイル名、マテリアルファイル名）

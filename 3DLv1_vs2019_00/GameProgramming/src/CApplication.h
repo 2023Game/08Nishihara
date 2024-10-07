@@ -18,13 +18,16 @@
 #include "CCharacter3.h"
 #include "CTaskManager.h"
 #include "CColliderTriangle.h"
+#include "CColliderMesh.h"
 
 class CApplication
 {
 private:
-	CColliderTriangle mColliderTriangle2;
+	//モデルからコライダを生成
+	CColliderMesh mColliderMesh;
+	//削除CColliderTriangle mColliderTriangle2;
 	//三角コライダの作成
-	CColliderTriangle mColliderTriangle;
+	//削除CColliderTriangle mColliderTriangle;
 	CModel mModelC5; //C5モデル
 	//static CTaskManager mTaskManager;
 	CPlayer mPlayer;

@@ -1,5 +1,5 @@
 #include "CColliderMesh.h"
-#include "CColliderTriangle.h"w
+#include "CColliderTriangle.h"
 
 CColliderMesh::CColliderMesh()
 	: mpColliderTriangles(nullptr)

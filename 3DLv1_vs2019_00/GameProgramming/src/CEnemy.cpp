@@ -24,7 +24,8 @@ CEnemy::CEnemy(CModel* model, const CVector& position,
 }
 
 //更新処理
-void CEnemy::Update() {
+void CEnemy::Update() 
+{
 	//行列を更新
 	CTransform::Update();
 	//位置を移動

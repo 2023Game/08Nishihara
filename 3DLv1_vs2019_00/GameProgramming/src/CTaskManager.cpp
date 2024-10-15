@@ -55,7 +55,7 @@ void CTaskManager::Update()
 void CTaskManager::Render() 
 {
 	//æ“ª‚©‚çÅŒã‚Ü‚ÅŒJ‚è•Ô‚µ
-	CTask* task = mTail.mpNext;
+	CTask* task = mTail.mpPrev;
 	while (task->mpPrev) 
 	{
 		//•`‰æˆ—‚ðŒÄ‚Ô

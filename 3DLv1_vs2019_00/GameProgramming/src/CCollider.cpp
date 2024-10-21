@@ -45,6 +45,22 @@ CCollider::~CCollider()
 	//コリジョンリストから削除
 	CCollisionManager::Instance()->Remove(this);
 }
+void CCollider::ChangePriority(int priority)
+{
+	mPriority = priority;
+	CCollisionManager::Instance()->Remove(this); //一旦削除
+	CCollisionManager::Instance()->Add(this); //追加
+}
+//優先度の変更
+void CCollider::ChangePriority()
+{
+	//自分の座標×親の変換行列を掛けてワールド座標を求める
+	CVector pos = mPosition * *mpMatrix;
+	//ベクトルの長さが優先度
+	CCollider::ChangePriority(pos.Length());
+}
+
+
 
 //衝突判定
 //Collision(コライダ1, コライダ2)

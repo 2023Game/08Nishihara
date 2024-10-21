@@ -18,6 +18,16 @@ void CColliderTriangle::Set(CCharacter3* parent, CMatrix* matrix
 	mV[1] = v1;
 	mV[2] = v2;
 }
+//優先度の変更
+void CColliderTriangle::ChangePriority()
+{
+	//mV[0]とmV[1]とmV[2]の中心を求める
+	CVector pos = (mV[0] * *mpMatrix + mV[1] * *mpMatrix
+		+ mV[2] * *mpMatrix) * (1.0f / 3.0f);
+	//ベクトルの長さが優先度
+	CCollider::ChangePriority(pos.Length());
+}
+
 
 void CColliderTriangle::Render()
 {

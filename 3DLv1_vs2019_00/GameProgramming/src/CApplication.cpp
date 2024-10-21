@@ -87,7 +87,8 @@ void CApplication::Update()
 
 	CTaskManager::Instance()->Update();
 	//コリジョンマネージャの衝突処理
-	CCollisionManager::Instance()->Collision();
+//削除	 CCollisionManager::Instance()->Collision();
+	CTaskManager::Instance()->Collision();
 	//頂点１、頂点２，頂点３、法線データの作成
 	CVector v0, v1, v2, n;
 	//法線を上向きで設定する

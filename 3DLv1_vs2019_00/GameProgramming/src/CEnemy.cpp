@@ -31,6 +31,14 @@ void CEnemy::Update()
 	//位置を移動
 	mPosition = mPosition + VELOCITY * mMatrixRotate;
 }
+void CEnemy::Collision()
+{
+	//コライダの優先度変更
+
+	//衝突処理を実行
+
+}
+
 
 //Collision(コライダ1, コライダ2)
 void CEnemy::Collision(CCollider* m, CCollider* o)

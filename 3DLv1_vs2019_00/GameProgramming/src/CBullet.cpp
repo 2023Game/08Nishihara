@@ -58,6 +58,12 @@ void CBullet::Collision(CCollider* m, CCollider* o)
 		mEnabled = false;
 	}
 }
+void CBullet::Collision()
+{
+	//コライダの優先度変更
+	//衝突処理を実行
+}
+
 
 
 

@@ -6,10 +6,11 @@
 
 
 #include "CTaskManager.h"
-
+class CCollider;
 class CCollisionManager : public CTaskManager
 {
 public:
+	void Collision(CCollider* c, int range);
 	//衝突処理
 	void Collision();
 	//インスタンスの取得

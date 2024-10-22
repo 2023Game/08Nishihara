@@ -10,6 +10,7 @@
 */
 class CTaskManager {
 public:
+	void Collision(CCollider* c, int range);
 	//インスタンスの取得
 	static CTaskManager* Instance();
 	//タスクの削除

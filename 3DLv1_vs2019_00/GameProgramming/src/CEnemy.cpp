@@ -33,9 +33,7 @@ void CEnemy::Update()
 }
 void CEnemy::Collision()
 {
-	//コライダの優先度変更
 
-	//衝突処理を実行
 
 }
 

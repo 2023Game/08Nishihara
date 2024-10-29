@@ -33,7 +33,13 @@ void CEnemy::Update()
 }
 void CEnemy::Collision()
 {
-
+	mCollider1.ChangePriority();
+	mCollider2.ChangePriority();
+	mCollider3.ChangePriority();
+	//Õ“Ëˆ—‚ðŽÀs
+	CCollisionManager::Instance()->Collision(&mCollider1, COLLISIONRANGE);
+	CCollisionManager::Instance()->Collision(&mCollider2, COLLISIONRANGE);
+	CCollisionManager::Instance()->Collision(&mCollider3, COLLISIONRANGE);
 
 }
 

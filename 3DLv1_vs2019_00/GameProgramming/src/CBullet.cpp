@@ -60,7 +60,9 @@ void CBullet::Collision(CCollider* m, CCollider* o)
 }
 void CBullet::Collision()
 {
-
+	mCollider.ChangePriority();
+	//Õ“Ëˆ—‚ðŽÀs
+	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
 
 }
 

@@ -5,6 +5,7 @@
 */
 class CCamera
 {
+
 public:
 	//表示エリアの設定
 	//Start(左座標,右座標,下座標,上座標)

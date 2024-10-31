@@ -11,6 +11,7 @@
 #include "CCollisionManager.h"
 #include "CBillBoard.h"
 #include "CColliderTriangle.h"
+#include "CUi.h"
 
 //クラスのstatic変数
 CTexture CApplication::mTexture;
@@ -54,7 +55,7 @@ void CApplication::Start()
 
 	    
 
-
+	spUi = new CUi();	//UIクラスの生成
 	mPlayer.Model(&mModel);
 	mPlayer.Scale(CVector(0.1f, 0.1f, 0.1f));
 	mPlayer.Position(CVector(0.0f, 0.0f, -3.0f));
@@ -176,7 +177,7 @@ void CApplication::Update()
 	CCollisionManager::Instance()->Render();
 
 
-
+	spUi->Render();	//UIの描画
 }
 
 CMatrix CApplication::mModelViewInverse;
@@ -185,6 +186,20 @@ const CMatrix& CApplication::ModelViewInverse()
 {
 	return mModelViewInverse;
 }
+
+CUi* CApplication::spUi = nullptr;
+
+CUi* CApplication::Ui()
+{
+	return spUi;	//インスタンスのポインタを返す
+}
+
+CApplication::~CApplication()
+{
+	delete spUi;	//インスタンスUiの削除
+}
+
+
 
 
 //CTaskManager CApplication::mTaskManager;

@@ -12,6 +12,7 @@
 #include "CBillBoard.h"
 #include "CColliderTriangle.h"
 #include "CUi.h"
+#include "CEnemy3.h"
 
 //クラスのstatic変数
 CTexture CApplication::mTexture;
@@ -40,7 +41,8 @@ CTexture* CApplication::Texture()
 //}
 void CApplication::Start()
 {
-
+	new CEnemy3(CVector(-5.0f, 1.0f, -10.0f), CVector(), CVector(0.1f, 0.1f, 0.1f));
+	new CEnemy3(CVector(5.0f, 1.0f, -10.0f), CVector(), CVector(0.1f, 0.1f, 0.1f));
 
 	//三角コライダの確認
 	//mColliderTriangle.Set(nullptr, nullptr

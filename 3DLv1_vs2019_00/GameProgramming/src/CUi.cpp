@@ -91,3 +91,7 @@ void CUi::RotX(float f)
 	mRotX = f;
 }
 
+void CUi::RotY(float f)
+{
+	mRotY = f;
+}

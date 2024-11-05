@@ -8,9 +8,10 @@
 class CUi
 {
 public:
-
+	
 	void PosY(float f);	//高度の設定
 	void RotX(float f);	//ピッチの設定
+	void RotY(float f);
 	//ゲームクリア表示
 	void Clear();
 	//ゲームオーバー表示

@@ -1,4 +1,5 @@
 #include "CEnemy3.h"
+#include "CEffect.h"
 
 #define OBJ "res\\f16.obj"	//モデルのファイル
 #define MTL "res\\f16.mtl"	//モデルのマテリアルファイル
@@ -6,9 +7,9 @@
 CModel CEnemy3::sModel;	//モデルデータ作成
 
 //デフォルトコンストラクタ
-CEnemy3::CEnemy3()
-{
-}
+//CEnemy3::CEnemy3()
+//{
+//}
 
 //CEnemy(位置, 回転, 拡縮)
 CEnemy3::CEnemy3()
@@ -47,9 +48,28 @@ void CEnemy3::Update()
 //Collision(コライダ1, コライダ2)
 void CEnemy3::Collision(CCollider* m, CCollider* o)
 {
+	mCollider.ChangePriority();
+	//衝突処理を実行
+	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
+	switch (o->Type())
+	{
+	case CCollider::EType::ESPHERE: //球コライダの時
+		//コライダのmとyが衝突しているか判定
+		if (CCollider::Collision(m, o))
+		{
+			//エフェクト生成
+			new CEffect(o->Parent()->Position(), 1.0f, 1.0f, "exp.tga", 4, 4, 2);
+			//衝突している時は無効にする
+			//mEnabled = false;
+		}
+		break;
+	}
 }
 
 void CEnemy3::Collision()
 {
+	mCollider.ChangePriority();
+	//衝突処理を実行
+	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
 }
 

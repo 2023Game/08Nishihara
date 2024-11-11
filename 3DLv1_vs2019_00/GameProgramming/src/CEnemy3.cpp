@@ -48,9 +48,9 @@ void CEnemy3::Update()
 //Collision(コライダ1, コライダ2)
 void CEnemy3::Collision(CCollider* m, CCollider* o)
 {
-	mCollider.ChangePriority();
-	//衝突処理を実行
-	CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
+	//mCollider.ChangePriority();
+	////衝突処理を実行
+	//CCollisionManager::Instance()->Collision(&mCollider, COLLISIONRANGE);
 	switch (o->Type())
 	{
 	case CCollider::EType::ESPHERE: //球コライダの時

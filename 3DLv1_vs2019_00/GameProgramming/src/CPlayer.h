@@ -15,6 +15,8 @@
 class CPlayer : public CCharacter3
 {
 public:
+	//インスタンスのポインタの取得
+	static CPlayer* Instance();
 	void Collision();
 	//void Collision(CCollider* c, int range);
 	//衝突処理
@@ -27,6 +29,11 @@ public:
 	//更新処理
 	void Update();
 private:
+	//インスタンスの設定
+	spInstance = this;
+	CPlayer* CPlayer::spInstance = nullptr;
+	//プレイヤーのインスタンス
+	static CPlayer* spInstance;
 	CInput mInput;
 	CColliderLine mLine; //線分コライダ
 	CColliderLine mLine2;

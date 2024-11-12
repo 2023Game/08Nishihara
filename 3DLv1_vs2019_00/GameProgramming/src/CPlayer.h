@@ -31,7 +31,7 @@ public:
 	void Update();
 private:
 
-	CPlayer* CPlayer::spInstance = nullptr;
+
 	//プレイヤーのインスタンス
 	static CPlayer* spInstance;
 	CInput mInput;

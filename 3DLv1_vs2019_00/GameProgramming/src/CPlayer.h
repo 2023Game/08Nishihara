@@ -15,6 +15,7 @@
 class CPlayer : public CCharacter3
 {
 public:
+
 	//インスタンスのポインタの取得
 	static CPlayer* Instance();
 	void Collision();
@@ -29,8 +30,7 @@ public:
 	//更新処理
 	void Update();
 private:
-	//インスタンスの設定
-	spInstance = this;
+
 	CPlayer* CPlayer::spInstance = nullptr;
 	//プレイヤーのインスタンス
 	static CPlayer* spInstance;

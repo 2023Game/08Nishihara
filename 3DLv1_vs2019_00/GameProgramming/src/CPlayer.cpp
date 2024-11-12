@@ -74,6 +74,24 @@ void CPlayer::Update()
 		//X軸の回転値を加算
 		mRotation = mRotation + ROTATION_XV;
 	}
+	//X軸のズレが2.0未満
+	if (-2.0f < dx && dx < 2.0f)
+	{
+		//Y軸のズレが2.0未満
+		if (-2.0f < dy && dy < 2.0f)
+		{
+			//Z軸のズレが0.0～30.0以内
+			if (-2.0f< dz && dz < 2.0f)
+			{
+				//弾を発射します
+				CBullet* bullet = new CBullet();
+				bullet->Set(0.1f, 1.5f);
+				bullet->Position(CVector(0.0f, 0.0f, 10.0f) * mMatrix);
+				bullet->Rotation(mRotation);
+				bullet->Update();
+			}
+		}
+	}
 
 	//変換行列の更新
 	CTransform::Update();
@@ -81,7 +99,8 @@ void CPlayer::Update()
 	CApplication::Ui()->PosY(mPosition.Y());
 	CApplication::Ui()->RotX(mRotation.X());
 	CApplication::Ui()->RotY(mRotation.Y());
-
+	//インスタンスの設定
+	spInstance = this;
 }
 
 //衝突処理

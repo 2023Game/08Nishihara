@@ -54,6 +54,7 @@ void CEnemy3::Update()
 		float dx = vp.Dot(mMatrixRotate.VectorX());
 		//上ベクトルとの内積を求める
 		float dy = vp.Dot(mMatrixRotate.VectorY());
+		float dz = vp.Dot(mMatrixRotate.VectorZ());
 
 		//X軸のズレが2.0未満
 		if (-2.0f < dx && dx < 2.0f)
@@ -61,14 +62,18 @@ void CEnemy3::Update()
 			//Y軸のズレが2.0未満
 			if (-2.0f < dy && dy < 2.0f)
 			{
-				//弾を発射します
-				CBullet* bullet = new CBullet();
-				bullet->Set(0.1f, 1.5f);
-				bullet->Position(
-					CVector(0.0f, 0.0f, 10.0f) * mMatrix);
-				bullet->Rotation(mRotation);
-				bullet->Update();
+				//Z軸のズレが0.0～30.0以内
+				if (0.0f < dz && dz < 30.0f)
+				{
+					//弾を発射します
+					CBullet* bullet = new CBullet();
+					bullet->Set(0.1f, 1.5f);
+					bullet->Position(CVector(0.0f, 0.0f, 10.0f) * mMatrix);
+					bullet->Rotation(mRotation);
+					bullet->Update();
+				}
 			}
+			
 		}
 	}
 

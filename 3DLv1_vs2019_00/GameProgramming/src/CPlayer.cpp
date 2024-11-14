@@ -141,7 +141,7 @@ void CPlayer::Collision(CCollider* m, CCollider* o)
 CPlayer* CPlayer::spInstance = nullptr;
 CPlayer* CPlayer::Instance()
 {
-	return;
+	return spInstance;
 }
 
 

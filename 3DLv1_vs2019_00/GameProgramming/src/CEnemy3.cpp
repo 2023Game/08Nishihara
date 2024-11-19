@@ -120,12 +120,22 @@ void CEnemy3::Collision(CCollider* m, CCollider* o)
 		}
 		break;
 	case CCollider::EType::ETRIANGLE: //三角コライダの時
-		//撃破で地面に衝突すると無効
-		if (mHp <= 0)
+		CVector adjust;//調整値
+		//三角コライダと球コライダの衝突判定
+		if (CCollider::CollisionTriangleSphere(o, m, &adjust))
 		{
-			mEnabled = false;
+			//撃破で地面に衝突すると無効
+			if (mHp <= 0)
+			{
+				mEnabled = false;
+
+			}
+			//break;
+			//衝突しない位置まで戻す
+			mPosition = mPosition + adjust;
 		}
 		break;
+
 
 	}
 }
